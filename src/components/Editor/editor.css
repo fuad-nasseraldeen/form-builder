@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Fredoka:wght@400;700&display=swap');
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='Arial']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='Arial']::before {
+    content: 'Arial';
+    font-family: 'Arial', sans-serif;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='sans-serif']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='sans-serif']::before {
+    content: 'Sans Serif';
+    font-family: 'sans-serif';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='Fredoka']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='Fredoka']::before {
+    content: 'Fredoka';
+    font-family: 'Fredoka', sans-serif;
+}
+
+.custom-quill .ql-container {
+    border: 1px solid #b0bec5;
+    border-top: transparent;
+    border-radius: 7px;
+    background: transparent;
+    padding: 0.5rem 0.75rem;
+    font-family: Fredoka;
+    font-size: 1.125rem
+        /* 18px */
+    ;
+    line-height: 1.75rem
+        /* 28px */
+    ;
+    font-weight: 500;
+    color: #455a64;
+}
+
+.custom-quill .ql-editor {
+    /* min-height: 12rem; */
+    direction: rtl;
+    text-align: right;
+}
+
+.custom-quill .ql-toolbar {
+    border: 1px solid #b0bec5;
+    border-radius: 7px 7px 0 0;
+    background: #eceff1;
+}
+
+.custom-quill .ql-toolbar.ql-snow+.ql-container.ql-snow {
+    /* height: 10rem; */
+}
+
+.custom-quill .ql-toolbar.ql-snow+.ql-container.ql-snow {
+    border-top: none;
+}
+
+.custom-quill .ql-container {
+    border: none !important;
+}
+
+.custom-quill .ql-toolbar {
+    border: none !important;
+}
+
+.custom-quill .ql-editor {
+    padding-right: 1.5em;
+    /* Adjust padding as needed */
+    direction: rtl;
+    /* Ensure the text direction is RTL */
+    text-align: right;
+    /* Align text to the right */
+}
+
+.custom-quill .ql-editor ul,
+.custom-quill .ql-editor ol {
+    padding-right: 1.5em;
+    /* Adjust padding as needed */
+    direction: rtl;
+    /* Ensure the list direction is RTL */
+    text-align: right;
+    /* Align list to the right */
+}
+
+.custom-quill .ql-editor li {
+    margin-right: 0.5em;
+    /* Adjust margin as needed */
+    list-style-type: disc;
+    direction: rtl;
+    /* Ensure the bullet direction is RTL */
+    text-align: right;
+    /* Align bullet text to the right */
+}
+
+.custom-quill .ql-snow .ql-picker {
+    font-size: medium;
+}
+
+.custom-quill .ql-toolbar.ql-snow {
+    font-family: inherit;
+}
+
+/* editor.css */
+.ql-toolbar.ql-snow .ql-picker-label::before {
+    content: 'Normal';
+    /* Adjust this to change the displayed text */
+    font-family: 'Arial', sans-serif, 'Fredoka';
+    /* Example of changing font */
+    color: #333;
+    /* Change text color */
+    padding: 5px;
+    /* Add some padding */
+
+}
+
+.ql-toolbar.ql-snow .ql-picker-label {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.ql-toolbar.ql-snow .ql-formats {
+    margin-right: 40px;
+}

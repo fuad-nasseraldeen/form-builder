@@ -15,7 +15,7 @@ const CustomTitleInput: React.FC<CustomTitleInputProps> = ({ buildPDFFile, label
 
     const profile = useSelector((state: RootState) => state.profile)
     const key = profile && typeof profile === 'object' && Object.keys(profile).find(entity => entity === label);
-    const content = key ? profile[key] : '';
+    const content = key ? profile[key] as string : '';
 
     const handleTextChange = (content: string) => {
         handleInputChange(content, label)
@@ -36,7 +36,7 @@ const CustomTitleInput: React.FC<CustomTitleInputProps> = ({ buildPDFFile, label
                     <SubTitle title={getTranslation(label)} />
                 </div>
                 <Template
-                    content={content}
+                    content={content!}
                     title={getTranslation(label)}
                     handleInputChange={handleTextChange}
                 />

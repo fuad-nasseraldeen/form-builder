@@ -24,8 +24,7 @@ const UlPoint: React.FC<UIPointProps> = ({
     title,
     dropdownOptions,
 }) => {
-    const profile = useSelector((state: RootState) => state.profile);
-    const { assessment } = profile;
+    const profile = useSelector((state: RootState) => state.profile)
 
     const [numUlPoints, setNumUlPoints] = useState(1); // State to track number of ul points
     const [inputs, setInputs] = useState<string[]>([]);
@@ -91,8 +90,8 @@ const UlPoint: React.FC<UIPointProps> = ({
     const showAssessment = () => {
         return (
             <div className="w-full font-hebrow text-2xl rtl-list">
-                {assessment &&
-                    assessment.map((assest, index) => (
+                {profile?.assessment &&
+                    profile?.assessment.map((assest, index) => (
                         <div key={index} className="text-right" dangerouslySetInnerHTML={{ __html: assest || '' }} />
                     ))}
             </div>

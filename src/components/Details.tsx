@@ -11,14 +11,7 @@ interface DetailsProps {
 
 export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChange }) => {
     const profile = useSelector((state: RootState) => state.profile);
-    const {
-        id,
-        name,
-        dateOfBirth,
-        age,
-        dateOfDiagnosis,
-        educationalFramework
-    } = profile
+
     return (
         <div className="flex flex-col text-2xl py-4 font-hebrow">
             <div className="flex gap-24">
@@ -33,7 +26,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                                     </span>
 
                                 </div>
-                                <p>{name}</p>
+                                <p>{profile?.name}</p>
                             </>
                         )}
                         {!buildPDFFile && <>
@@ -46,14 +39,14 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                             <input
                                 type="text"
                                 name="name"
-                                value={name}
+                                value={profile?.name}
                                 placeholder={getTranslation('name')}
                                 onChange={(e) => handleInputChange(e, 'name')}
                                 className="input w-full h-8 md:w-64 input-bordered font-hebrow font-normal"
                             /></>}
                     </div>
                     <div className="flex items-center gap-2">
-                        {(buildPDFFile && !_.isEmpty(dateOfBirth)) && (
+                        {(buildPDFFile && !_.isEmpty(profile?.dateOfBirth)) && (
                             <>
                                 <div className="label">
                                     <span className="text-2xl font-hebrow font-bold"
@@ -61,7 +54,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                                         <span className='pr-1 pl-5'>:</span>
                                     </span>
                                 </div>
-                                <p>{dateOfBirth}</p>
+                                <p>{profile?.dateOfBirth}</p>
                             </>
                         )}
                         {!buildPDFFile && <>
@@ -72,7 +65,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                                 </span>
                             </div>
                             <DateInput
-                                value={dateOfBirth}
+                                value={profile?.dateOfBirth}
                                 label={getTranslation('dateOfBirth')}
                                 entity={'dateOfBirth'}
                                 handleInputChange={handleInputChange}
@@ -80,7 +73,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                         </>}
                     </div>
                     <div className="flex items-center gap-2">
-                        {(buildPDFFile && !_.isEmpty(dateOfDiagnosis)) && (
+                        {(buildPDFFile && !_.isEmpty(profile?.dateOfDiagnosis)) && (
                             <>
                                 <div className="label">
                                     <span className="text-2xl font-hebrow font-bold">
@@ -88,7 +81,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                                         <span className='pr-1 pl-5'>:</span>
                                     </span>
                                 </div>
-                                <p>{dateOfDiagnosis}</p>
+                                <p>{profile?.dateOfDiagnosis}</p>
                             </>
                         )}
                         {!buildPDFFile && <>
@@ -99,7 +92,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                                 </span>
                             </div>
                             <DateInput
-                                value={dateOfDiagnosis}
+                                value={profile?.dateOfDiagnosis}
                                 label={getTranslation('dateOfDiagnosis')}
                                 entity={'dateOfDiagnosis'}
                                 handleInputChange={handleInputChange}
@@ -109,7 +102,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                 </div>
                 <div className="flex flex-col gap-1">
                     <div className="flex items-center gap-2">
-                        {(buildPDFFile && !_.isEmpty(id)) && (
+                        {(buildPDFFile && !_.isEmpty(profile?.id)) && (
                             <>
                                 <div className="label">
                                     <span className="text-2xl font-hebrow font-bold">
@@ -117,7 +110,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                                         <span className='pr-1 pl-5'>:</span>
                                     </span>
                                 </div>
-                                <p>{id}</p>
+                                <p>{profile?.id}</p>
                             </>
                         )}
                         {!buildPDFFile && <>
@@ -130,14 +123,14 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                             <input
                                 type="text"
                                 name="id"
-                                value={id}
+                                value={profile?.id}
                                 placeholder={getTranslation('id')}
                                 onChange={(e) => handleInputChange(e, 'id')}
                                 className="input w-full h-8 md:w-64 input-bordered font-hebrow font-normal"
                             /></>}
                     </div>
                     <div className="flex items-center gap-2">
-                        {(buildPDFFile && !_.isEmpty(age)) && (
+                        {(buildPDFFile && !_.isEmpty(profile?.age)) && (
                             <>
                                 <div className="label">
                                     <span className="text-2xl font-hebrow font-bold">
@@ -145,7 +138,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                                         <span className='pr-1 pl-5'>:</span>
                                     </span>
                                 </div>
-                                <p>{age}</p>
+                                <p>{profile?.age}</p>
                             </>
                         )}
                         {!buildPDFFile && <>
@@ -158,7 +151,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                             <input
                                 type="text"
                                 name="age"
-                                value={age}
+                                value={profile?.age}
                                 placeholder={getTranslation('age')}
                                 onChange={(e) => handleInputChange(e, 'age')}
                                 step="any"
@@ -167,7 +160,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                         </>}
                     </div>
                     <div className="flex items-center gap-2">
-                        {(buildPDFFile && !_.isEmpty(educationalFramework)) && (
+                        {(buildPDFFile && !_.isEmpty(profile?.educationalFramework)) && (
                             <>
                                 <div className="label">
                                     <span className="text-2xl font-hebrow font-bold">
@@ -175,7 +168,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                                         <span className='pr-1 pl-5'>:</span>
                                     </span>
                                 </div>
-                                <p>{educationalFramework}</p>
+                                <p>{profile?.educationalFramework}</p>
                             </>
                         )}
                         {!buildPDFFile && <>
@@ -188,7 +181,7 @@ export const Details: React.FC<DetailsProps> = ({ buildPDFFile, handleInputChang
                             <input
                                 type="text"
                                 name="educationalFramework"
-                                value={educationalFramework}
+                                value={profile?.educationalFramework}
                                 placeholder={getTranslation('educationalFramework')}
                                 onChange={(e) => handleInputChange(e, 'educationalFramework')}
                                 className="input w-full h-8 md:w-64 input-bordered font-hebrow font-normal"

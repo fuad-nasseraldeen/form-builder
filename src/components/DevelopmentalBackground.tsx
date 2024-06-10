@@ -13,7 +13,6 @@ interface DevelopmentalBackgroundProps {
 
 export const DevelopmentalBackground: React.FC<DevelopmentalBackgroundProps> = ({ buildPDFFile, handleInputChange }) => {
     const profile = useSelector((state: RootState) => state.profile)
-    const { developmentalBackground } = profile
 
 
     const handleTextChange = (content: string) => {
@@ -27,13 +26,13 @@ export const DevelopmentalBackground: React.FC<DevelopmentalBackgroundProps> = (
       }
     </style>
     <div>
-      ${developmentalBackground || ''}
+      ${profile?.developmentalBackground || ''}
     </div>
   `;
 
     return (
         <div className="py-1 font-hebrow pb-5 text-2xl" >
-            {(buildPDFFile && !_.isEmpty(developmentalBackground)) && (
+            {(buildPDFFile && !_.isEmpty(profile?.developmentalBackground)) && (
                 <>
                     <span className="text-2xl font-hebrow font-bold ">
                         {getTranslation('developmentalBackground')}
@@ -55,7 +54,7 @@ export const DevelopmentalBackground: React.FC<DevelopmentalBackgroundProps> = (
                 {/* {underline('w-24', 'mx-0', 'mb-4')} */}
 
                 <Template
-                    content={developmentalBackground}
+                    content={profile?.developmentalBackground}
                     title={getTranslation('developmentalBackground')}
                     handleInputChange={handleTextChange}
                 />

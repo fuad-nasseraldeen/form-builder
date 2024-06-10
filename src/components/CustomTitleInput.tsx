@@ -14,8 +14,8 @@ interface CustomTitleInputProps {
 const CustomTitleInput: React.FC<CustomTitleInputProps> = ({ buildPDFFile, label, handleInputChange }) => {
 
     const profile = useSelector((state: RootState) => state.profile)
-    const key = Object.keys(profile).filter(entity => entity === label)
-    const content = key.map(entity => profile[entity])[0] as string
+    const key = profile && typeof profile === 'object' && Object.keys(profile).find(entity => entity === label);
+    const content = key ? profile[key] : '';
 
     const handleTextChange = (content: string) => {
         handleInputChange(content, label)

@@ -49,7 +49,7 @@ const App = () => {
     noPrintElements.forEach(el => (el as HTMLElement).style.display = 'none');  // Hide elements with 'no-print' class
 
     const options: Options = {
-      filename: `${profile.name}.pdf`,
+      filename: `${profile?.name ? profile?.name : 'summary'}.pdf`,
       method: 'save',
       resolution: Resolution.HIGH,
       page: {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { formats, modules } from '../../utils/types';
@@ -15,6 +15,7 @@ interface EditorProps {
 const Editor: React.FC<EditorProps> = ({ value, title, onChange }) => {
     const [isEditing, setIsEditing] = useState(true);
     const [editorValue, setEditorValue] = useState(value);
+    const editorRef = useRef<ReactQuill>(null);
 
     const addRtlToUl = (content: string): string => {
         return content.replace(/<ul>/g, '<ul dir="rtl">');
@@ -44,10 +45,10 @@ const Editor: React.FC<EditorProps> = ({ value, title, onChange }) => {
                         {getTranslation(title)}
                     </label>
                     <ReactQuill
+                        ref={editorRef}
                         value={editorValue}
                         onChange={handleEditorChange}
                         className="custom-quill"
-                        style={{}}
                         modules={modules}
                         formats={formats}
                         theme="snow"

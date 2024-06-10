@@ -115,13 +115,13 @@ const UlPoint: React.FC<UIPointProps> = ({
         <>
             {buildPDFFile && !_.isEmpty(title) && (
                 <>
-                    <SubTitle title={getTranslation(title)} underlineWidth="w-20" margin="mx-0" />
+                    <SubTitle title={getTranslation(title)} />
                     {showAssessment()}
                 </>
             )}
             {!buildPDFFile && (
                 <>
-                    <SubTitle title={getTranslation(title)} underlineWidth="w-20" margin="mx-0" />
+                    <SubTitle title={getTranslation(title)} />
                     {ulPoints}
                     <div className="flex gap-1 w-full py-1.5 font-hebrow">
                         <button

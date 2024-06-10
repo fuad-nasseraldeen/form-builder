@@ -16,25 +16,25 @@ const Header: React.FC<HeaderProps> = ({ buildPDFFile, handleInputChange }) => {
     return (
 
         <Fragment>
-            <Title title={messages.DiagnosticSummary} underlineWidth={'w-96'} margin={'mx-auto'} style={'mb-4'} />
+            <Title title={messages.DiagnosticSummary} margin={'mx-auto'} />
             <Details buildPDFFile={buildPDFFile} handleInputChange={handleInputChange} />
             <DevelopmentalBackground buildPDFFile={buildPDFFile} handleInputChange={handleInputChange} />
 
-            <CustomTitleInput buildPDFFile={buildPDFFile} label={'reference'} underlineWidth={'w-10'} margin={'mx-0'} handleInputChange={handleInputChange} />
-            <CustomTitleInput buildPDFFile={buildPDFFile} label={'referrer'} underlineWidth={'w-16'} margin={'mx-0'} handleInputChange={handleInputChange} />
-            <CustomTitleInput buildPDFFile={buildPDFFile} label={'causeOfReferral'} underlineWidth={'w-20'} margin={'mx-0'} handleInputChange={handleInputChange} />
+            <CustomTitleInput buildPDFFile={buildPDFFile} label={'reference'} handleInputChange={handleInputChange} />
+            <CustomTitleInput buildPDFFile={buildPDFFile} label={'referrer'} handleInputChange={handleInputChange} />
+            <CustomTitleInput buildPDFFile={buildPDFFile} label={'causeOfReferral'} handleInputChange={handleInputChange} />
             <UlPoint buildPDFFile={buildPDFFile} title={'assessment'} dropdownOptions={dropdownAssessmentOptions} handleInputChange={handleInputChange} />
             {/* <SubTitle buildPDFFile={buildPDFFile} title={messages.humanComponentsAndPerformance} underlineWidth={'w-64'} margin={'mx-0'} /> */}
-            <CustomTitleInput buildPDFFile={buildPDFFile} label={'communicationSkills'} underlineWidth={'w-20'} margin={'mx-0'} handleInputChange={handleInputChange} />
-            <CustomTitleInput buildPDFFile={buildPDFFile} label={'motorSkills'} underlineWidth={'w-24'} margin={'mx-0'} handleInputChange={handleInputChange} />
-            <CustomTitleInput buildPDFFile={buildPDFFile} label={'graphSkills'} underlineWidth={'w-24'} margin={'mx-0'} handleInputChange={handleInputChange} />
-            <CustomTitleInput buildPDFFile={buildPDFFile} label={'grossMotorSkills'} underlineWidth={'w-24'} margin={'mx-0'} handleInputChange={handleInputChange} />
-            <CustomTitleInput buildPDFFile={buildPDFFile} label={'processSkills'} underlineWidth={'w-24'} margin={'mx-0'} handleInputChange={handleInputChange} />
+            <CustomTitleInput buildPDFFile={buildPDFFile} label={'communicationSkills'} handleInputChange={handleInputChange} />
+            <CustomTitleInput buildPDFFile={buildPDFFile} label={'motorSkills'} handleInputChange={handleInputChange} />
+            <CustomTitleInput buildPDFFile={buildPDFFile} label={'graphSkills'} handleInputChange={handleInputChange} />
+            <CustomTitleInput buildPDFFile={buildPDFFile} label={'grossMotorSkills'} handleInputChange={handleInputChange} />
+            <CustomTitleInput buildPDFFile={buildPDFFile} label={'processSkills'} handleInputChange={handleInputChange} />
 
             <br />
-            <CustomTitleInput buildPDFFile={buildPDFFile} label={'summary'} underlineWidth={'w-20'} margin={'mx-0'} handleInputChange={handleInputChange} />
+            <CustomTitleInput buildPDFFile={buildPDFFile} label={'summary'} handleInputChange={handleInputChange} />
             <br />
-            <CustomTitleInput buildPDFFile={buildPDFFile} label={'additionalRecommendations'} underlineWidth={'w-20'} margin={'mx-0'} handleInputChange={handleInputChange} />
+            <CustomTitleInput buildPDFFile={buildPDFFile} label={'additionalRecommendations'} handleInputChange={handleInputChange} />
         </Fragment>
     );
 }

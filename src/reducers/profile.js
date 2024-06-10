@@ -1,10 +1,11 @@
+// src/reducers/profile.js
 import { PROFILE_ERROR, SET_PROFILE_DATA } from '../actions/types'
 
 const initialState = {
   profile: [],
 }
 
-const rootReducer = (state = initialState, action) => {
+const profileReducer = (state = initialState, action) => {
   const { type, payload } = action
   switch (type) {
     case SET_PROFILE_DATA:
@@ -23,4 +24,4 @@ const rootReducer = (state = initialState, action) => {
   }
 }
 
-export default rootReducer
+export default profileReducer

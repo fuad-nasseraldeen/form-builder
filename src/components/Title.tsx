@@ -1,13 +1,9 @@
-import { underline } from "./underline";
-
 interface TitleProps {
     title: string
-    underlineWidth?: string
     margin?: string
-    style: string
 }
 
-const Title: React.FC<TitleProps> = ({ title, underlineWidth, margin, style }) => {
+const Title: React.FC<TitleProps> = ({ title, margin }) => {
     const currentDate = new Date().toLocaleDateString('en-GB'); // Specify the locale for dd/mm/yyyy format
     return (
         <>

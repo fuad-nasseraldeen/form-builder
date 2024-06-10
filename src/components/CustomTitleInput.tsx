@@ -7,13 +7,11 @@ import { useSelector } from 'react-redux';
 
 interface CustomTitleInputProps {
     label: string
-    underlineWidth: string
-    margin: string
     buildPDFFile: boolean
     handleInputChange: (value: string, entity: keyof Profile, index?: number) => void;
 }
 
-const CustomTitleInput: React.FC<CustomTitleInputProps> = ({ buildPDFFile, label, underlineWidth, margin, handleInputChange }) => {
+const CustomTitleInput: React.FC<CustomTitleInputProps> = ({ buildPDFFile, label, handleInputChange }) => {
 
     const profile = useSelector((state: RootState) => state.profile)
     const key = Object.keys(profile).filter(entity => entity === label)
@@ -28,14 +26,14 @@ const CustomTitleInput: React.FC<CustomTitleInputProps> = ({ buildPDFFile, label
             {(buildPDFFile && !_.isEmpty(content)) && (
                 <div className='flex'>
                     <div className='ml-5 shrink-0'>
-                        <SubTitle title={getTranslation(label)} underlineWidth={underlineWidth} margin={margin} />
+                        <SubTitle title={getTranslation(label)} />
                     </div>
                     <div dangerouslySetInnerHTML={{ __html: content || '' }} />
                 </div>
             )}
             {!buildPDFFile && <>
                 <div className='py-2'>
-                    <SubTitle title={getTranslation(label)} underlineWidth={underlineWidth} margin={margin} />
+                    <SubTitle title={getTranslation(label)} />
                 </div>
                 <Template
                     content={content}

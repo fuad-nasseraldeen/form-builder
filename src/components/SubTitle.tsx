@@ -1,4 +1,3 @@
-import { underline } from "./underline";
 interface SubTitleProps {
     title: string;
 }

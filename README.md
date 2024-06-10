@@ -1,30 +1,88 @@
-# React + TypeScript + Vite
+# Occupational Therapy Diagnosis Summary to PDF
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project simplifies the process of writing and generating diagnosis summaries in occupational therapy. It allows therapists to input, edit, and convert summaries to PDF files efficiently.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Overview
+This project is designed to assist occupational therapists in creating and managing diagnosis summaries. It includes a rich text editor for detailed inputs and the ability to generate PDF files from these summaries.
 
-## Expanding the ESLint configuration
+## Features
+- Rich text editor for detailed summaries
+- Real-time preview of the summary
+- PDF generation from the summary content
+- Easy-to-use interface
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
+- React
+- Redux
+- TypeScript
+- React Quill (Rich Text Editor)
+- jsPDF (PDF generation)
+- Tailwind CSS
+- Vite
+- Lodash
+- react-to-pdf
+- HTML, CSS
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Prerequisites
+- Node.js (>= 12.x)
+- npm or yarn
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/fuad-nasseraldeen/form-builder.git
+    cd form-builder
+    ```
+
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+    or
+    ```bash
+    yarn install
+    ```
+
+### Running the Application
+1. Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+
+2. Open your browser and navigate to `http://localhost:5173`.
+
+## Usage
+1. Fill in the diagnosis summary in the provided rich text editor.
+2. Click "Save" to store your input.
+3. Click "Download PDF" to generate and download a PDF of the summary.
+
+
+## Contributing
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add new feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+For any inquiries or issues, please contact [fuad.nasseraldeen@gmail.com](mailto:fuad.nasseraldeen@gmail.com).

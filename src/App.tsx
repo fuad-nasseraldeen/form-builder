@@ -19,7 +19,7 @@ const App = () => {
   const customDispatch = useCustomDispatch();
 
   useEffect(() => {
-    if (JSON.stringify(data) !== JSON.stringify(profile) && Object.keys(data).length === 0) {
+    if (JSON.stringify(data) !== JSON.stringify(profile) && Object.keys(data).length !== 0) {
       customDispatch(data);
     }
   }, [data]);
@@ -43,13 +43,16 @@ const App = () => {
     setData(newState);
   };
 
+  const namePDF = () => {
+    return profile?.name ? messages.cuncernName + '-' + profile?.name : messages.cuncernName
+  }
   const handleGeneratePDF = () => {
     setIsLoading(true); // Start loading
     const noPrintElements = document.querySelectorAll('.no-print');
     noPrintElements.forEach(el => (el as HTMLElement).style.display = 'none');  // Hide elements with 'no-print' class
 
     const options: Options = {
-      filename: `${profile?.name ? profile?.name : 'summary'}.pdf`,
+      filename: namePDF(),
       method: 'save',
       resolution: Resolution.HIGH,
       page: {

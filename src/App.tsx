@@ -13,13 +13,13 @@ import Spinner from './components/Spinner/Spinner.tsx';
 
 const App = () => {
   const profile = useSelector((state: RootState) => state.profile);
-  const [data, setData] = useState(undefined);
+  const [data, setData] = useState<Profile>({});
   const [buildPDFFile, setBuildPDFFile] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const customDispatch = useCustomDispatch();
 
   useEffect(() => {
-    if (JSON.stringify(data) !== JSON.stringify(profile) && data !== undefined) {
+    if (JSON.stringify(data) !== JSON.stringify(profile) && Object.keys(data).length === 0) {
       customDispatch(data);
     }
   }, [data]);
@@ -31,7 +31,7 @@ const App = () => {
       updatedValue = value;
     } else {
       if (entity === 'assessment' && index !== undefined) {
-        const updatedAssessment = data.assessment ? [...data.assessment] : [];
+        const updatedAssessment = data?.assessment ? [...data.assessment] : [];
         updatedAssessment[index] = value.target.value;
         updatedValue = updatedAssessment;
       } else {

@@ -22,23 +22,23 @@ export interface RootState {
 }
 
 export type Profile = {
-    id: string,
-    name: string,
-    dateOfBirth: string,
-    age: string,
-    date: string,
-    dateOfDiagnosis: string,
-    educationalFramework: string,
-    developmentalBackground: string
-    assessment: string[]
-    communicationSkills: string
-    rossMotorSkills: string
-    graphSkills: string
-    motorSkills: string
-    processSkills: string
-    summary: string
-    pointsObj: PointsObj[]
-    additionalRecommendations: string
+    id?: string,
+    name?: string,
+    dateOfBirth?: string,
+    age?: string,
+    date?: string,
+    dateOfDiagnosis?: string,
+    educationalFramework?: string,
+    developmentalBackground?: string
+    assessment?: string[]
+    communicationSkills?: string
+    rossMotorSkills?: string
+    graphSkills?: string
+    motorSkills?: string
+    processSkills?: string
+    summary?: string
+    pointsObj?: PointsObj[]
+    additionalRecommendations?: string
     [key: string]: unknown
 }
 

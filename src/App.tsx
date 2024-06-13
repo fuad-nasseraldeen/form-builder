@@ -13,16 +13,16 @@ import Spinner from './components/Spinner/Spinner.tsx';
 
 const App = () => {
   const profile = useSelector((state: RootState) => state.profile);
-  const [data, setData] = useState(profile);
+  const [data, setData] = useState(undefined);
   const [buildPDFFile, setBuildPDFFile] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const customDispatch = useCustomDispatch();
 
   useEffect(() => {
-    if (JSON.stringify(data) !== JSON.stringify(profile)) {
+    if (JSON.stringify(data) !== JSON.stringify(profile) && data !== undefined) {
       customDispatch(data);
     }
-  }, [data, profile]);
+  }, [data]);
 
   const handleInputChange = (value: string | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, entity: keyof Profile, index?: number) => {
     let updatedValue: unknown;

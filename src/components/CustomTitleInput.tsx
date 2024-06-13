@@ -28,7 +28,7 @@ const CustomTitleInput: React.FC<CustomTitleInputProps> = ({ buildPDFFile, label
                     <div className='ml-5 shrink-0'>
                         <SubTitle title={getTranslation(label)} />
                     </div>
-                    <div dangerouslySetInnerHTML={{ __html: content || '' }} />
+                    <div dangerouslySetInnerHTML={{ __html: content }} />
                 </div>
             )}
             {!buildPDFFile && <>
